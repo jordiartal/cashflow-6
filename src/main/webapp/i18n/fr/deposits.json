@@ -1,0 +1,30 @@
+{
+    "cashflow6App": {
+        "deposits" : {
+            "home": {
+                "title": "Deposits",
+                "createLabel": "Créer un nouveau Deposits",
+                "createOrEditLabel": "Créer ou éditer un Deposits",
+                "search": "Recherche pour Deposits"
+            },
+            "created": "Un nouveau Deposits a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Deposits avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Deposits avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Deposits {{ id }} ?"
+            },
+            "detail": {
+                "title": "Deposits"
+            },
+            "companyName": "Company Name",
+            "initialValue": "Initial Value",
+            "finalValue": "Final Value",
+            "initialDate": "Initial Date",
+            "expDate": "Exp Date",
+            "interest": "Interest",
+            "currency": "Currency",
+            "variation": "Variation",
+            "user": "User"
+        }
+    }
+}

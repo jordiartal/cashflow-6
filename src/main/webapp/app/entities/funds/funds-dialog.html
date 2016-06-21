@@ -1,0 +1,104 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFundsLabel" translate="cashflow6App.funds.home.createOrEditLabel">Create or edit a Funds</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.funds.id" has-authority="ROLE_ADMIN">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.funds.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cashflow6App.funds.isin" for="field_isin">Isin</label>
+            <input type="text" class="form-control" name="isin" id="field_isin"
+                    ng-model="vm.funds.isin"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cashflow6App.funds.nameFund" for="field_nameFund">Name Fund</label>
+            <input type="text" class="form-control" name="nameFund" id="field_nameFund"
+                    ng-model="vm.funds.nameFund"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cashflow6App.funds.companyName" for="field_companyName">Company Name</label>
+            <input type="text" class="form-control" name="companyName" id="field_companyName"
+                    ng-model="vm.funds.companyName"
+                     />
+        </div>
+        <div class="form-group"  has-authority="ROLE_ADMIN">
+            <label class="control-label" translate="cashflow6App.funds.actualShares" for="field_actualShares">Actual Shares</label>
+            <input type="number" class="form-control" name="actualShares" id="field_actualShares"
+                    ng-model="vm.funds.actualShares"
+                     />
+        </div>
+        <div class="form-group"  has-authority="ROLE_ADMIN">
+            <label class="control-label" translate="cashflow6App.funds.initialDate" for="field_initialDate">Initial Date</label>
+                <div class="input-group">
+                    <input id="field_initialDate" type="text" class="form-control" name="initialDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.funds.initialDate" is-open="vm.datePickerOpenStatus.initialDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('initialDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cashflow6App.funds.newShares" for="field_newShares">New Shares</label>
+            <input type="number" class="form-control" name="newShares" id="field_newShares"
+                    ng-model="vm.funds.newShares"
+                     />
+        </div>
+        <div class="form-group"  has-authority="ROLE_ADMIN">
+            <label class="control-label" translate="cashflow6App.funds.actualValue" for="field_actualValue">Actual Value</label>
+            <input type="number" class="form-control" name="actualValue" id="field_actualValue"
+                    ng-model="vm.funds.actualValue"
+                     />
+        </div>
+        <div class="form-group"  has-authority="ROLE_ADMIN">
+            <label class="control-label" translate="cashflow6App.funds.initialValue" for="field_initialValue">Initial Value</label>
+            <input type="number" class="form-control" name="initialValue" id="field_initialValue"
+                    ng-model="vm.funds.initialValue"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cashflow6App.funds.newValue" for="field_newValue">New Value</label>
+            <input type="number" class="form-control" name="newValue" id="field_newValue"
+                    ng-model="vm.funds.newValue"
+                     />
+        </div>
+        <div class="form-group"  has-authority="ROLE_ADMIN">
+            <label class="control-label" translate="cashflow6App.funds.initialShares" for="field_initialShares">Initial Shares</label>
+            <input type="number" class="form-control" name="initialShares" id="field_initialShares"
+                    ng-model="vm.funds.initialShares"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="cashflow6App.funds.currency" for="field_currency">Currency</label>
+            <select class="form-control" id="field_currency" name="currency" ng-model="vm.funds.currency" ng-options="currency as currency.code for currency in vm.currencies track by currency.id">
+                <option value=""></option>
+            </select>
+        </div>
+
+        <div class="form-group"  has-authority="ROLE_ADMIN">
+            <label translate="cashflow6App.funds.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.funds.user" ng-options="user as user.login for user in vm.users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

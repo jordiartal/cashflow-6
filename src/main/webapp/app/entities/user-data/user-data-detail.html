@@ -1,0 +1,30 @@
+
+<div>
+    <h2><span translate="cashflow6App.userData.detail.title">User Data</span> {{vm.userData.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="cashflow6App.userData.city">City</span></dt>
+        <dd>
+            <span>{{vm.userData.city}}</span>
+        </dd>
+        <dt><span translate="cashflow6App.userData.country">Country</span></dt>
+        <dd>
+            <span>{{vm.userData.country}}</span>
+        </dd>
+        <dt><span translate="cashflow6App.userData.birthday">Birthday</span></dt>
+        <dd>
+            <span>{{vm.userData.birthday | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="cashflow6App.userData.user">User</span></dt>
+        <dd>
+            {{vm.userData.user.login}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="cashflow6App.stockAudit.detail.title">Stock Audit</span> {{vm.stockAudit.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="cashflow6App.stockAudit.opDate">Op Date</span></dt>
+        <dd>
+            <span>{{vm.stockAudit.opDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="cashflow6App.stockAudit.antValue">Ant Value</span></dt>
+        <dd>
+            <span>{{vm.stockAudit.antValue}}</span>
+        </dd>
+        <dt><span translate="cashflow6App.stockAudit.newValue">New Value</span></dt>
+        <dd>
+            <span>{{vm.stockAudit.newValue}}</span>
+        </dd>
+        <dt><span translate="cashflow6App.stockAudit.antShares">Ant Shares</span></dt>
+        <dd>
+            <span>{{vm.stockAudit.antShares}}</span>
+        </dd>
+        <dt><span translate="cashflow6App.stockAudit.newShares">New Shares</span></dt>
+        <dd>
+            <span>{{vm.stockAudit.newShares}}</span>
+        </dd>
+        <dt><span translate="cashflow6App.stockAudit.stock">Stock</span></dt>
+        <dd>
+            <a ui-sref="stock-detail({id:vm.stockAudit.stock.id})">{{vm.stockAudit.stock.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

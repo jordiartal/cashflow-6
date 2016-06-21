@@ -1,0 +1,82 @@
+<div>
+    <h2 translate="cashflow6App.savings.home.title">Savings</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="savings.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="cashflow6App.savings.home.createLabel">
+                        Create new Savings
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"  has-authority="ROLE_ADMIN"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="accountName"><span translate="cashflow6App.savings.accountName">Account Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="actualValue"><span translate="cashflow6App.savings.actualValue">Actual Value</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="initialValue"  has-authority="ROLE_ADMIN"><span translate="cashflow6App.savings.initialValue">Initial Value</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="initialDate"  has-authority="ROLE_ADMIN"><span translate="cashflow6App.savings.initialDate">Initial Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="newValue"  has-authority="ROLE_ADMIN"><span translate="cashflow6App.savings.newValue">New Value</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user.login" has-authority="ROLE_ADMIN"><span translate="cashflow6App.savings.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th><span translate="cashflow6App.savings.variation">Account Name</span></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="savings in vm.savings track by savings.id">
+                    <td has-authority="ROLE_ADMIN"><a ui-sref="savings-detail({id:savings.id})">{{savings.id}}</a></td>
+                    <td>{{savings.accountName}}</td>
+                    <td>{{savings.actualValue}}<a ui-sref="currency-detail({id:savings.currency.id})">{{savings.currency.code}}</a></td>
+                    <td has-authority="ROLE_ADMIN">{{savings.initialValue}}<a ui-sref="currency-detail({id:savings.currency.id})">{{savings.currency.code}}</a></td>
+                        <td has-authority="ROLE_ADMIN">{{savings.initialDate | date:'mediumDate'}}</td>
+                    <td has-authority="ROLE_ADMIN">{{savings.newValue}}<a ui-sref="currency-detail({id:savings.currency.id})">{{savings.currency.code}}</a></td>
+                    <td has-authority="ROLE_ADMIN">
+                        {{savings.user.login}}
+                    </td>
+                    <td>
+                        {{savings.actualValue-savings.initialValue}}<a ui-sref="currency-detail({id:savings.currency.id})">{{savings.currency.code}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="savings-detail({id:savings.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="savings.edit({id:savings.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="savings.delete({id:savings.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="savings.history({id:savings.id})"
+                                    class="btn btn-success btn-sm">
+                                <span class="glyphicon glyphicon-list"></span>
+                                <span class="hidden-xs hidden-sm" >History</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

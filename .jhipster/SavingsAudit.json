@@ -1,0 +1,29 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "savings",
+            "otherEntityName": "savings",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "opDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "antValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "newValue",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20160522164731",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "savings_audit",
+    "pagination": "pager"
+}

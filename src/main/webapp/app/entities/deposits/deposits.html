@@ -1,0 +1,76 @@
+<div>
+    <h2 translate="cashflow6App.deposits.home.title">Deposits</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="deposits.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="cashflow6App.deposits.home.createLabel">
+                        Create new Deposits
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id" has-authority="ROLE_ADMIN"><span translate="global.field.id"  has-authority="ROLE_ADMIN">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="companyName"><span translate="cashflow6App.deposits.companyName">Company Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="initialValue"><span translate="cashflow6App.deposits.initialValue">Initial Value</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="finalValue"><span translate="cashflow6App.deposits.finalValue">Final Value</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="initialDate"><span translate="cashflow6App.deposits.initialDate">Initial Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="expDate"><span translate="cashflow6App.deposits.expDate">Exp Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="interest"><span translate="cashflow6App.deposits.interest">Interest</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user.login" has-authority="ROLE_ADMIN"><span translate="cashflow6App.deposits.user"  has-authority="ROLE_ADMIN">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th><span translate="cashflow6App.deposits.variation">variation</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="deposits in vm.deposits track by deposits.id">
+                    <td has-authority="ROLE_ADMIN"><a ui-sref="deposits-detail({id:deposits.id})"  has-authority="ROLE_ADMIN">{{deposits.id}}</a></td>
+                    <td>{{deposits.companyName}}</td>
+                    <td>{{deposits.initialValue}}<a ui-sref="currency-detail({id:deposits.currency.id})">{{deposits.currency.code}}</a></td>
+                    <td>{{deposits.finalValue}}<a ui-sref="currency-detail({id:deposits.currency.id})">{{deposits.currency.code}}</a></td>
+                        <td>{{deposits.initialDate | date:'mediumDate'}}</td>
+                        <td>{{deposits.expDate | date:'mediumDate'}}</td>
+                    <td>{{deposits.interest}}%</td>
+                    <td  has-authority="ROLE_ADMIN">
+                        {{deposits.user.login}}
+                    </td>
+                    <td>{{deposits.finalValue-deposits.initialValue}}<a ui-sref="currency-detail({id:deposits.currency.id})">{{deposits.currency.code}}</a></td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="deposits-detail({id:deposits.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="deposits.edit({id:deposits.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="deposits.delete({id:deposits.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

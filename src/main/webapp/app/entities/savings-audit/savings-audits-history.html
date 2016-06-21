@@ -1,0 +1,83 @@
+<table class="table table-striped">
+
+
+    <tbody>
+    <tr ng-repeat="Resource in entidad">
+
+        <td>{{Resource.antValue}}</td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+<!--
+<div>
+    <h2 translate="cashflow6App.savingsAudit.home.title">Savings Audits</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="savings-audit.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="cashflow6App.savingsAudit.home.createLabel">
+                        Create new Savings Audit
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="opDate"><span translate="cashflow6App.savingsAudit.opDate">Op Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="antValue"><span translate="cashflow6App.savingsAudit.antValue">Ant Value</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="newValue"><span translate="cashflow6App.savingsAudit.newValue">New Value</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="savings.id"><span translate="cashflow6App.savingsAudit.savings">Savings</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="savingsAudit in vm.savingsAudits track by savingsAudit.id">
+                    <td><a ui-sref="savings-audit-detail({id:savingsAudit.id})">{{savingsAudit.id}}</a></td>
+                        <td>{{savingsAudit.opDate | date:'mediumDate'}}</td>
+                    <td>{{savingsAudit.antValue}}</td>
+                    <td>{{savingsAudit.newValue}}</td>
+                    <td>
+                        <a ui-sref="savings-detail({id:savingsAudit.savings.id})">{{savingsAudit.savings.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="savings-audit-detail({id:savingsAudit.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="savings-audit.edit({id:savingsAudit.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="savings-audit.delete({id:savingsAudit.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>
+-->

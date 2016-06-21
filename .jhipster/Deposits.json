@@ -1,0 +1,47 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "currency",
+            "otherEntityName": "currency",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "initialValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "finalValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "initialDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "expDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "interest",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20160522165129",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "deposits",
+    "pagination": "pager"
+}

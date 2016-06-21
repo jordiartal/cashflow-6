@@ -1,0 +1,37 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "stock",
+            "otherEntityName": "stock",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "opDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "antValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "newValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "antShares",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "newShares",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160522171316",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "stock_audit",
+    "pagination": "pager"
+}

@@ -1,0 +1,27 @@
+{
+    "cashflow6App": {
+        "stockAudit" : {
+            "home": {
+                "title": "Stock Audits",
+                "createLabel": "Create a new Stock Audit",
+                "createOrEditLabel": "Create or edit a Stock Audit",
+                "search": "Search for Stock Audit"
+            },
+            "created": "A new Stock Audit is created with identifier {{ param }}",
+            "updated": "A Stock Audit is updated with identifier {{ param }}",
+            "deleted": "A Stock Audit is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Stock Audit {{ id }}?"
+            },
+            "detail": {
+                "title": "Stock Audit"
+            },
+            "opDate": "Op Date",
+            "antValue": "Ant Value",
+            "newValue": "New Value",
+            "antShares": "Ant Shares",
+            "newShares": "New Shares",
+            "stock": "Stock"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "cashflow6App": {
+        "userData" : {
+            "home": {
+                "title": "User Data",
+                "createLabel": "Create a new User Data",
+                "createOrEditLabel": "Create or edit a User Data",
+                "search": "Search for User Data"
+            },
+            "created": "A new User Data is created with identifier {{ param }}",
+            "updated": "A User Data is updated with identifier {{ param }}",
+            "deleted": "A User Data is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete User Data {{ id }}?"
+            },
+            "detail": {
+                "title": "User Data"
+            },
+            "city": "City",
+            "country": "Country",
+            "birthday": "Birthday",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "cashflow6App": {
+        "stock" : {
+            "home": {
+                "title": "Stocks",
+                "createLabel": "Crear nuevo Stock",
+                "createOrEditLabel": "Crear o editar Stock",
+                "search": "Search for Stock"
+            },
+            "created": "Un nuevo Stock ha sido creado con el identificador {{ param }}",
+            "updated": "Un Stock ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Stock ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Stock {{ id }}?"
+            },
+            "detail": {
+                "title": "Stock"
+            },
+            "ticker": "Ticker",
+            "companyName": "Company Name",
+            "actualShares": "Actual Shares",
+            "newShares": "New Shares",
+            "initialDate": "Initial Date",
+            "actualValue": "Actual Value",
+            "initialValue": "Initial Value",
+            "newValue": "New Value",
+            "initialShares": "Initial Shares",
+            "currency": "Currency",
+            "stockAudit": "Stock Audit",
+            "variation": "Variación",
+            "variationcent": "% Variación",
+            "user": "User"
+        }
+    }
+}

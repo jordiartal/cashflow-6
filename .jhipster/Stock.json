@@ -1,0 +1,65 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "currency",
+            "otherEntityName": "currency",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipName": "stockAudit",
+            "otherEntityName": "stockAudit",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "stock"
+        },
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ticker",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "actualShares",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "newShares",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "initialDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "actualValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "initialValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "newValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "initialShares",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160522171219",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "stock",
+    "pagination": "pager"
+}

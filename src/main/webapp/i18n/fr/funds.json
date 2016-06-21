@@ -1,0 +1,36 @@
+{
+    "cashflow6App": {
+        "funds" : {
+            "home": {
+                "title": "Funds",
+                "createLabel": "Créer un nouveau Funds",
+                "createOrEditLabel": "Créer ou éditer un Funds",
+                "search": "Recherche pour Funds"
+            },
+            "created": "Un nouveau Funds a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Funds avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Funds avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Funds {{ id }} ?"
+            },
+            "detail": {
+                "title": "Funds"
+            },
+            "isin": "Isin",
+            "nameFund": "Name Fund",
+            "companyName": "Company Name",
+            "actualShares": "Actual Shares",
+            "initialDate": "Initial Date",
+            "newShares": "New Shares",
+            "actualValue": "Actual Value",
+            "initialValue": "Initial Value",
+            "newValue": "New Value",
+            "initialShares": "Initial Shares",
+            "currency": "Currency",
+            "fundsAudit": "Funds Audit",
+            "variation": "Variation",
+            "variationcent": "% Variation",
+            "user": "User"
+        }
+    }
+}

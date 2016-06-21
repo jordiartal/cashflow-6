@@ -1,0 +1,28 @@
+{
+    "cashflow6App": {
+        "currency" : {
+            "home": {
+                "title": "Currencies",
+                "createLabel": "Crear nuevo Currency",
+                "createOrEditLabel": "Crear o editar Currency",
+                "search": "Search for Currency"
+            },
+            "created": "Un nuevo Currency ha sido creado con el identificador {{ param }}",
+            "updated": "Un Currency ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Currency ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Currency {{ id }}?"
+            },
+            "detail": {
+                "title": "Currency"
+            },
+            "name": "Name",
+            "code": "Code",
+            "conver": "Conver",
+            "savings": "Savings",
+            "deposits": "Deposits",
+            "funds": "Funds",
+            "stock": "Stock"
+        }
+    }
+}

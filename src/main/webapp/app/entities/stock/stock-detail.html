@@ -1,0 +1,63 @@
+
+<div>
+    <h2> {{vm.stock.companyName}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="cashflow6App.stock.ticker">Ticker</span></dt>
+        <dd>
+            <span>{{vm.stock.ticker}}</span>
+        </dd>
+
+        <dt><span translate="cashflow6App.stock.initialDate">Initial Date</span></dt>
+        <dd>
+            <span>{{vm.stock.initialDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="cashflow6App.stock.initialShares">Initial Shares</span></dt>
+        <dd>
+            <span>{{vm.stock.initialShares}}</span>
+        </dd>
+        <dt><span translate="cashflow6App.stock.initialValue">Initial Value</span></dt>
+        <dd>
+            <span>{{vm.stock.initialValue}}<a ui-sref="currency-detail({id:vm.stock.currency.id})">{{vm.stock.currency.code}}</a></span>
+        </dd>
+
+        <dt><span translate="cashflow6App.stock.actualShares">Actual Shares</span></dt>
+        <dd>
+            <span>{{vm.stock.actualShares}}</span>
+        </dd>
+        <dt><span translate="cashflow6App.stock.actualValue">Actual Value</span></dt>
+        <dd>
+            <span>{{vm.stock.actualValue}}<a ui-sref="currency-detail({id:vm.stock.currency.id})">{{vm.stock.currency.code}}</a></span>
+        </dd>
+
+
+        <dt  has-authority="ROLE_ADMIN"><span translate="cashflow6App.stock.newShares">New Shares</span></dt>
+        <dd  has-authority="ROLE_ADMIN">
+            <span>{{vm.stock.newShares}}</span>
+        </dd>
+        <dt has-authority="ROLE_ADMIN"><span translate="cashflow6App.stock.newValue">New Value</span></dt>
+        <dd  has-authority="ROLE_ADMIN">
+            <span>{{vm.stock.newValue}}<a ui-sref="currency-detail({id:vm.stock.currency.id})">{{vm.stock.currency.code}}</a></span>
+        </dd>
+
+        <dt has-authority="ROLE_ADMIN"><span translate="cashflow6App.stock.user">User</span></dt>
+        <dd has-authority="ROLE_ADMIN">
+            {{vm.stock.user.login}}
+        </dd>
+        <dt><span translate="cashflow6App.stock.variation">variation</span></dt>
+        <dd>
+            <span>{{vm.stock.actualValue-vm.stock.initialValue}}<a ui-sref="currency-detail({id:vm.funds.currency.id})">{{vm.stock.currency.code}}</a></span>
+        </dd>
+        <dt><span translate="cashflow6App.stock.variationcent">% variation</span></dt>
+        <dd>
+            <span>{{(((vm.stock.actualValue/vm.stock.initialValue)-1)*100) | number:2}}%</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

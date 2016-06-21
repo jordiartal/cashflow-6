@@ -1,0 +1,25 @@
+{
+    "cashflow6App": {
+        "savingsAudit" : {
+            "home": {
+                "title": "Savings Audits",
+                "createLabel": "Create a new Savings Audit",
+                "createOrEditLabel": "Create or edit a Savings Audit",
+                "search": "Search for Savings Audit"
+            },
+            "created": "A new Savings Audit is created with identifier {{ param }}",
+            "updated": "A Savings Audit is updated with identifier {{ param }}",
+            "deleted": "A Savings Audit is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Savings Audit {{ id }}?"
+            },
+            "detail": {
+                "title": "Savings Audit"
+            },
+            "opDate": "Op Date",
+            "antValue": "Ant Value",
+            "newValue": "New Value",
+            "savings": "Savings"
+        }
+    }
+}

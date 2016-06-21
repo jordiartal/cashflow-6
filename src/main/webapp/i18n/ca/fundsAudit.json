@@ -1,0 +1,27 @@
+{
+    "cashflow6App": {
+        "fundsAudit" : {
+            "home": {
+                "title": "Funds Audits",
+                "createLabel": "Create a new Funds Audit",
+                "createOrEditLabel": "Create or edit a Funds Audit",
+                "search": "Search for Funds Audit"
+            },
+            "created": "A new Funds Audit is created with identifier {{ param }}",
+            "updated": "A Funds Audit is updated with identifier {{ param }}",
+            "deleted": "A Funds Audit is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Funds Audit {{ id }}?"
+            },
+            "detail": {
+                "title": "Funds Audit"
+            },
+            "opDate": "Op Date",
+            "antValue": "Ant Value",
+            "newValue": "New Value",
+            "antShares": "Ant Shares",
+            "newShares": "New Shares",
+            "funds": "Funds"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "cashflow6App": {
+        "savings" : {
+            "home": {
+                "title": "Savings",
+                "createLabel": "Créer un nouveau Savings",
+                "createOrEditLabel": "Créer ou éditer un Savings",
+                "search": "Recherche pour Savings"
+            },
+            "created": "Un nouveau Savings a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Savings avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Savings avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Savings {{ id }} ?"
+            },
+            "detail": {
+                "title": "Savings"
+            },
+            "accountName": "Account Name",
+            "actualValue": "Actual Value",
+            "initialValue": "Initial Value",
+            "initialDate": "Initial Date",
+            "newValue": "New Value",
+            "currency": "Currency",
+            "savingsAudit": "Savings Audit",
+            "variation": "variation",
+            "user": "User"
+        }
+    }
+}

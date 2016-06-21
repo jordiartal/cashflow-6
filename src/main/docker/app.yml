@@ -1,0 +1,15 @@
+version: '2'
+services:
+    cashflow6-app:
+        image: cashflow6
+        external_links:
+            - cashflow6-mysql:mysql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/cashflow6?useUnicode=true&characterEncoding=utf8&useSSL=false
+        ports:
+            - 8080:8080
+    cashflow6-mysql:
+        extends:
+            file: mysql.yml
+            service: cashflow6-mysql

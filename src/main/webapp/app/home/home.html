@@ -1,0 +1,167 @@
+<div ng-cloak>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="promoCarousel" class="carousel slide" data-ride="carousel" ng-show="!vm.isAuthenticated()">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#promoCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#promoCarousel" data-slide-to="1"></li>
+                    <li data-target="#promoCarousel" data-slide-to="2"></li>
+                    <li data-target="#promoCarousel" data-slide-to="3"></li>
+                    <li data-target="#promoCarousel" data-slide-to="4"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" roler="listbox">
+                    <div class="item active">
+                        <div>
+                            <img src="/content/images/invest.png" class="img-carousel img-responsive img-rounded">
+                            <span class="txt-carousel">
+                                <h3>Cash Flow</h3>
+                                <br>
+                                <h4>
+                                Make grow your savings. </br>
+
+                                </br>Take the control of your:</br>
+                                    <ul>
+                                            <li>Savings</li>
+
+                                            <li>Deposits</li>
+
+                                            <li>Funds</li>
+
+                                            <li>Stock</li>
+                                    </ul>
+                                </h4>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div>
+                            <img src="/content/images/savings.jpg" class="img-carousel img-responsive img-rounded">
+                            <span class="txt-carousel">
+                                <h3>Savings</h3>
+                                <br>
+                                <h4>
+                                Here you can: </br>
+
+
+                                    <ul>
+                                            <li>Insert your accounts</li>
+
+                                            <li>Modify the total ammounts</li>
+
+                                            <li>Acces to operations history</li>
+
+                                    </ul>
+                                </h4>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div>
+                            <img src="/content/images/deposits.jpg" class="img-carousel img-responsive img-rounded">
+                            <span class="txt-carousel">
+                                <h3>Deposits</h3>
+                                <br>
+                                <h4>
+                                Here you can: </br>
+
+
+                                    <ul>
+                                            <li>Insert your fixed-term deposits</li>
+
+                                            <li>Modify the total ammounts</li>
+
+                                            <li>See the total amount </br>
+                                                at the end of term.</li>
+
+                                    </ul>
+                                </h4>
+                            </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div>
+                            <img src="/content/images/funds.jpg" class="img-carousel img-responsive img-rounded">
+                            <span class="txt-carousel">
+                                <h3>Funds</h3>
+                                <br>
+                                <h4>
+                                Here you can: </br>
+
+
+                                    <ul>
+                                            <li>Insert your Funds</li>
+
+                                            <li>Modify the total Shares</li>
+
+                                            <li>Modify the total Ammount</li>
+
+                                            <li>Access to operations history</li>
+
+                                    </ul>
+                                </h4>
+                            </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div>
+                            <img src="/content/images/stock.jpg" class="img-carousel img-responsive img-rounded">
+                            <span class="txt-carousel">
+                                <h3">Stock</h3>
+                                <br>
+                                <h4>
+                                Here you can: </br>
+
+
+                                    <ul>
+                                            <li>Insert your Stocks</li>
+
+                                            <li>Modify the total Shares</li>
+
+                                            <li>Modify the total Ammount</li>
+
+                                            <li>Access to operations history</li>
+
+                                    </ul>
+                                </h4>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- left-right buttons -->
+                    <a class="left carousel-control" href="#promoCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#promoCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div ng-show="vm.isAuthenticated()">
+                    <span class="lead" translate="home.subtitle"></span><span>,{{vm.account.login}}</span>
+                    <div>
+                        Aquí va el Dashboard
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-cloak class="panel panel-body missatges" ng-switch="vm.isAuthenticated()">
+    <div class="alert alert-success" ng-switch-when="true" translate="home.logged.message"
+         translate-values="{username: '{{vm.account.login}}'}">
+        You are logged in as user "{{vm.account.login}}".
+    </div>
+    <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.authenticated" translate-compile>
+        If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default
+        accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and
+        password="user").
+    </div>
+    <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.register"
+         translate-compile>
+        You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
+    </div>
+</div>

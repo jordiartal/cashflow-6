@@ -1,0 +1,72 @@
+<div>
+    <h2 translate="cashflow6App.stockAudit.home.title">Stock Audits</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="stock-audit.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="cashflow6App.stockAudit.home.createLabel">
+                        Create new Stock Audit
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="opDate"><span translate="cashflow6App.stockAudit.opDate">Op Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="antValue"><span translate="cashflow6App.stockAudit.antValue">Ant Value</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="newValue"><span translate="cashflow6App.stockAudit.newValue">New Value</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="antShares"><span translate="cashflow6App.stockAudit.antShares">Ant Shares</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="newShares"><span translate="cashflow6App.stockAudit.newShares">New Shares</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stock.id"><span translate="cashflow6App.stockAudit.stock">Stock</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="stockAudit in vm.stockAudits track by stockAudit.id">
+                    <td><a ui-sref="stock-audit-detail({id:stockAudit.id})">{{stockAudit.id}}</a></td>
+                        <td>{{stockAudit.opDate | date:'mediumDate'}}</td>
+                    <td>{{stockAudit.antValue}}</td>
+                    <td>{{stockAudit.newValue}}</td>
+                    <td>{{stockAudit.antShares}}</td>
+                    <td>{{stockAudit.newShares}}</td>
+                    <td>
+                        <a ui-sref="stock-detail({id:stockAudit.stock.id})">{{stockAudit.stock.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="stock-audit-detail({id:stockAudit.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="stock-audit.edit({id:stockAudit.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="stock-audit.delete({id:stockAudit.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

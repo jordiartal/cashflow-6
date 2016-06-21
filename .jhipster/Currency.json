@@ -1,0 +1,47 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "savings",
+            "otherEntityName": "savings",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "currency"
+        },
+        {
+            "relationshipName": "deposits",
+            "otherEntityName": "deposits",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "currency"
+        },
+        {
+            "relationshipName": "funds",
+            "otherEntityName": "funds",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "currency"
+        },
+        {
+            "relationshipName": "stock",
+            "otherEntityName": "stock",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "currency"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "code",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "conver",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20160522164355",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "currency",
+    "pagination": "pager"
+}

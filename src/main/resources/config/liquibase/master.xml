@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522164355_added_entity_Currency.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522164448_added_entity_Savings.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522164731_added_entity_SavingsAudit.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522165129_added_entity_Deposits.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522165839_added_entity_Funds.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522165941_added_entity_FundsAudit.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522171219_added_entity_Stock.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522171316_added_entity_StockAudit.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522171828_added_entity_UserData.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160618143003_added_entity_Savings.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20160522164448_added_entity_constraints_Savings.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522164731_added_entity_constraints_SavingsAudit.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522165129_added_entity_constraints_Deposits.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522165839_added_entity_constraints_Funds.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522165941_added_entity_constraints_FundsAudit.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522171219_added_entity_constraints_Stock.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522171316_added_entity_constraints_StockAudit.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160522171828_added_entity_constraints_UserData.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160618143003_added_entity_constraints_Savings.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

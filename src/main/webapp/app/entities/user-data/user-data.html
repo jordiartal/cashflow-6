@@ -1,0 +1,68 @@
+<div has-authority="ROLE_ADMIN">
+    <h2 translate="cashflow6App.userData.home.title">User Data</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="user-data.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="cashflow6App.userData.home.createLabel">
+                        Create new User Data
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="city"><span translate="cashflow6App.userData.city">City</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="country"><span translate="cashflow6App.userData.country">Country</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="birthday"><span translate="cashflow6App.userData.birthday">Birthday</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user.login"><span translate="cashflow6App.userData.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="userData in vm.userData track by userData.id">
+                    <td><a ui-sref="user-data-detail({id:userData.id})">{{userData.id}}</a></td>
+                    <td>{{userData.city}}</td>
+                    <td>{{userData.country}}</td>
+                        <td>{{userData.birthday | date:'mediumDate'}}</td>
+                    <td>
+                        {{userData.user.login}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="user-data-detail({id:userData.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="user-data.edit({id:userData.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="user-data.delete({id:userData.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>
