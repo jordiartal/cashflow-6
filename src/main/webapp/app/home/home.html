@@ -126,8 +126,8 @@
             <div class="container-fluid" ng-show="vm.isAuthenticated()">
 
                 <div class="jumbotron">
-                    <h1 translate="home.title">Dashboard</h1>
-                    <p translate="home.question"></p>
+                    <h1 id="titoldash" translate="home.title">Dashboard</h1>
+                    <p id="questiondash" translate="home.question"></p>
                 </div>
 
                 <div class="panel panel-body">
@@ -142,33 +142,33 @@
 
                 <div id="dashboard" class="panel panel-body">
 
-                    <div>
+                    <div class="">
                         <button class="btn btn-info" ui-sref="savings" >
                             <span class="glyphicon glyphicon-piggy-bank"></span>&nbsp;
                             <span translate="global.menu.entities.savings">Savings</span>
                         </button>
-                        <span class="">In this section you can insert your Savings Accounts, and manage them</span>
+                        <span class="descr">In this section you can insert your Savings Accounts, and manage them</span>
                     </div>
                     <div>
                         <button class="btn btn-info" ui-sref="deposits" >
                             <span class="glyphicon glyphicon-hourglass"></span>&nbsp;
                             <span translate="global.menu.entities.deposits">Deposits</span>
                         </button>
-                        <span class="">In this section you can insert your Fix Term Deposits, and manage them</span>
+                        <span class="descr">In this section you can insert your Fix Term Deposits, and manage them</span>
                     </div>
                     <div>
                         <button class="btn btn-info lead" ui-sref="funds">
                             <span class="glyphicon glyphicon-tree-deciduous"></span>&nbsp;
                             <span translate="global.menu.entities.funds">Funds</span>
                         </button>
-                        <span>In this section you can insert your Investment Funds Shares, and manage them</span>
+                        <span class="descr">In this section you can insert your Investment Funds Shares, and manage them</span>
                     </div>
                     <div>
                         <button class="btn btn-info" class="" ui-sref="stock" >
                             <span class="glyphicon glyphicon-lock"></span>&nbsp;
                             <span translate="global.menu.entities.stock">Stock</span>
                         </button>
-                        <span>In this section you can insert your Stock Exchange Shares, and manage them</span>
+                        <span class="descr">In this section you can insert your Stock Exchange Shares, and manage them</span>
                     </div>
                 </div>
             </div>

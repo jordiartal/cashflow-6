@@ -127,6 +127,8 @@ Main page styles
     background-color: #f7f9f9;
 }
 
+
+
 /* ==========================================================================
 Dashboard
 ========================================================================== */
@@ -373,6 +375,9 @@ Media Queries
         margin-right:0;
         font-size: 20px;
     }
+    .descr{
+        display:inline-block;
+    }
 }
 
 /* Small Devices, Tablets */
@@ -423,6 +428,12 @@ Media Queries
 
     .carousel-indicators {
         bottom: -10px;
+    }
+    #titoldash{
+        font-size: 25px;
+    }
+    #questiondash{
+        font-size: 15px;
     }
 }
 
