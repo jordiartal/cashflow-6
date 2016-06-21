@@ -15,6 +15,32 @@
             "follow": "Suivez @java_hipster sur Twitter"
         },
         "like": "Si vous aimez JHipster, donnez nous une étoile sur",
-        "github": "GitHub"
+        "github": "GitHub",
+        "carousel1": {
+            "lema": "Fes crèixer els teus estalvis",
+            "diapo1": "Pren el control sobre:",
+            "li1": "Estalvis",
+            "li2": "Dipòsits",
+            "li3": "Fons d'Inversió",
+            "li4": "Accions"
+        },
+        "carousel2": {
+            "txt1": "Aquí pots:",
+            "li1": "Crear les teves comptes",
+            "li2": "Modificar els Imports",
+            "li3": "Històric d'operacions"
+        },
+        "carousel3": {
+            "txt1": "Aquí pots:",
+            "li1": "Crear els teus dipòsits",
+            "li2": "Veure l'import final"
+        },
+        "carousel4": {
+            "li1": "Crear els teus fons d'inversió",
+            "li2": "Modificar el total de participacions"
+        },
+        "carousel5": {
+            "li1": "Crear les teves accions"
+        }
     }
 }

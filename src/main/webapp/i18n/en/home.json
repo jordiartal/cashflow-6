@@ -15,6 +15,31 @@
             "follow": "follow @java_hipster on Twitter"
         },
         "like": "If you like JHipster, don't forget to give us a star on",
-        "github": "GitHub"
+        "github": "GitHub",
+        "carousel1": {
+            "lema": "Make your savings grow",
+            "diapo1": "Take control over:",
+            "li1": "Savings",
+            "li2": "Deposits",
+            "li3": "Funds",
+            "li4": "Stock"
+        },
+        "carousel2": {
+            "txt1": "Here you can:",
+            "li1": "Create your accounts",
+            "li2": "Modify your total ammounts",
+            "li3": "History of operations"
+        },
+        "carousel3": {
+            "li1": "Create your Deposits",
+            "li2": "See the final Value"
+        },
+        "carousel4": {
+            "li1": "Create your Funds",
+            "li2": "Modify the amount of Shares"
+        },
+        "carousel5": {
+            "li1": "Create your Stocks"
+        }
     }
 }
