@@ -9,7 +9,7 @@
 
     function HomeController ($scope, Principal, LoginService, $state) {
         var vm = this;
-
+        $scope.today = new Date();
         vm.account = null;
         vm.isAuthenticated = null;
         vm.login = LoginService.open;

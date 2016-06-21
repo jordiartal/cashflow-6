@@ -175,10 +175,12 @@
         </div>
     </div>
 </div>
-<div ng-cloak class="panel panel-body missatges" ng-switch="vm.isAuthenticated()">
-    <div class="alert alert-success" ng-switch-when="true" translate="home.logged.message"
-         translate-values="{username: '{{vm.account.login}}'}">
-        You are logged in as user "{{vm.account.login}}".
+<div ng-cloak class="missatges" ng-switch="vm.isAuthenticated()">
+    <div class="alert alert-success" ng-switch-when="true">
+        <span translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
+            You are logged in as user "{{vm.account.login}}".
+        </span>
+        <span>{{today|date}}</span>
     </div>
     <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.authenticated" translate-compile>
         If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default
@@ -190,4 +192,3 @@
         You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
     </div>
 </div>
-
