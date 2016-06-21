@@ -5,6 +5,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
         <h4 class="modal-title" id="mySavingsLabel" translate="cashflow6App.savings.home.createOrEditLabel">Create or edit a Savings</h4>
+        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;<i><span translate="global.menu.entities.required"></span></i>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
@@ -14,10 +15,11 @@
                     ng-model="vm.savings.id" readonly />
         </div>
         <div class="form-group">
+            <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
             <label class="control-label" translate="cashflow6App.savings.accountName" for="field_accountName">Account Name</label>
             <input type="text" class="form-control" name="accountName" id="field_accountName"
                     ng-model="vm.savings.accountName"
-                     />
+                     required/>
         </div>
         <div class="form-group" has-authority="ROLE_ADMIN">
             <label class="control-label" translate="cashflow6App.savings.actualValue" for="field_actualValue">Actual Value</label>
@@ -42,10 +44,11 @@
                 </div>
         </div>
         <div class="form-group">
+            <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
             <label class="control-label" translate="cashflow6App.savings.newValue" for="field_newValue">New Value</label>
             <input type="number" class="form-control" name="newValue" id="field_newValue"
                     ng-model="vm.savings.newValue"
-                     />
+                     required/>
         </div>
 
         <div class="form-group">

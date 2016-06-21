@@ -1,11 +1,12 @@
 {
     "home": {
-        "title": "Benvingut, Java Hipster!",
+        "title": "Tauler",
         "subtitle": "Benvingut a CashFlow",
+        "subtitle2":"Pots modificar els teus ",
         "logged": {
             "message": "S'ha connectat amb l'usuari \"{{username}}\"."
         },
-        "question": "Si tens qualsevol pregunta sobre JHipster:",
+        "question": "Aquí pots gestionar les teves dades, modificar i esborrar les teves comptes d'estalvis, dipòsits, fons o accions",
         "link": {
             "homepage": "Pàgina principal de JHipster",
             "stackoverflow": "JHipster a Stack Overflow",

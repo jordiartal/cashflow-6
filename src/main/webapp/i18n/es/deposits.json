@@ -16,12 +16,12 @@
             "detail": {
                 "title": "Deposits"
             },
-            "companyName": "Company Name",
+            "companyName": "Deposit Name",
             "initialValue": "Initial Value",
             "finalValue": "Final Value",
             "initialDate": "Initial Date",
             "expDate": "Exp Date",
-            "interest": "Interest",
+            "interest": "% Interest",
             "currency": "Currency",
             "variation": "Variación",
             "user": "User"

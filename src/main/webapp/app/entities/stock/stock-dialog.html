@@ -5,7 +5,9 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
         <h4 class="modal-title" id="myStockLabel" translate="cashflow6App.stock.home.createOrEditLabel">Create or edit a Stock</h4>
+        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;<i><span translate="global.menu.entities.required"></span></i>
     </div>
+
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
         <div class="form-group" ng-show="vm.stock.id"  has-authority="ROLE_ADMIN">
@@ -20,10 +22,11 @@
                      />
         </div>
         <div class="form-group">
+            <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
             <label class="control-label" translate="cashflow6App.stock.companyName" for="field_companyName">Company Name</label>
             <input type="text" class="form-control" name="companyName" id="field_companyName"
                     ng-model="vm.stock.companyName"
-                     />
+                     required/>
         </div>
         <div class="form-group"  has-authority="ROLE_ADMIN">
             <label class="control-label" translate="cashflow6App.stock.actualShares" for="field_actualShares">Actual Shares</label>
@@ -32,10 +35,11 @@
                      />
         </div>
         <div class="form-group">
+            <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
             <label class="control-label" translate="cashflow6App.stock.newShares" for="field_newShares">New Shares</label>
             <input type="number" class="form-control" name="newShares" id="field_newShares"
                     ng-model="vm.stock.newShares"
-                     />
+                     required/>
         </div>
         <div class="form-group"  has-authority="ROLE_ADMIN">
             <label class="control-label" translate="cashflow6App.stock.initialDate" for="field_initialDate">Initial Date</label>
@@ -60,10 +64,11 @@
                      />
         </div>
         <div class="form-group">
+            <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
             <label class="control-label" translate="cashflow6App.stock.newValue" for="field_newValue">New Value</label>
             <input type="number" class="form-control" name="newValue" id="field_newValue"
                     ng-model="vm.stock.newValue"
-                     />
+                     required/>
         </div>
         <div class="form-group"  has-authority="ROLE_ADMIN">
             <label class="control-label" translate="cashflow6App.stock.initialShares" for="field_initialShares">Initial Shares</label>

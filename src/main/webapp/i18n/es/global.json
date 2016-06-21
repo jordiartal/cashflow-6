@@ -1,6 +1,6 @@
 {
     "global": {
-        "title": "Cashflow6",
+        "title": "Cashflow",
         "browsehappy": "Está usando un navegador <strong>no actualizado</strong>. Por favor, <a href=\"http://browsehappy.com/?locale=en\">actualice su navegador</a> para mejorar su experiencia.",
         "menu": {
             "home": "Inicio",
@@ -16,7 +16,8 @@
                 "stock": "Stock",
                 "stockAudit": "Stock Audit",
                 "userData": "User Data",
-                "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+                "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+                "required":"Este campo es obligatorio"
             },
             "account": {
                 "main": "Cuenta",

@@ -5,6 +5,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
         <h4 class="modal-title" id="myDepositsLabel" translate="cashflow6App.deposits.home.createOrEditLabel">Create or edit a Deposits</h4>
+        <span class="glyphicon glyphicon-asterisk"></span>&nbsp;<i><span translate="global.menu.entities.required"></span></i>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
@@ -14,16 +15,19 @@
                     ng-model="vm.deposits.id" readonly />
         </div>
         <div class="form-group">
+            <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
             <label class="control-label" translate="cashflow6App.deposits.companyName" for="field_companyName">Company Name</label>
+
             <input type="text" class="form-control" name="companyName" id="field_companyName"
                     ng-model="vm.deposits.companyName"
-                     />
+                   required/>
         </div>
         <div class="form-group">
+            <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
             <label class="control-label" translate="cashflow6App.deposits.initialValue" for="field_initialValue">Initial Value</label>
             <input type="number" class="form-control" name="initialValue" id="field_initialValue"
                     ng-model="vm.deposits.initialValue"
-                     />
+                   required />
         </div>
         <div class="form-group"  has-authority="ROLE_ADMIN">
             <label class="control-label" translate="cashflow6App.deposits.finalValue" for="field_finalValue">Final Value</label>
@@ -35,7 +39,7 @@
             <label class="control-label" translate="cashflow6App.deposits.initialDate" for="field_initialDate">Initial Date</label>
                 <div class="input-group">
                     <input id="field_initialDate" type="text" class="form-control" name="initialDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.deposits.initialDate" is-open="vm.datePickerOpenStatus.initialDate"
-                    />
+                            />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('initialDate')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
@@ -45,20 +49,22 @@
             <label class="control-label" translate="cashflow6App.deposits.expDate" for="field_expDate">Exp Date</label>
                 <div class="input-group">
                     <input id="field_expDate" type="text" class="form-control" name="expDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.deposits.expDate" is-open="vm.datePickerOpenStatus.expDate"
-                    />
+                           />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('expDate')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </div>
         </div>
         <div class="form-group">
+            <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
             <label class="control-label" translate="cashflow6App.deposits.interest" for="field_interest">Interest %</label>
             <input type="number" class="form-control" name="interest" id="field_interest"
                     ng-model="vm.deposits.interest"
-                     />
+                   required />
         </div>
 
         <div class="form-group">
+
             <label translate="cashflow6App.deposits.currency" for="field_currency">Currency</label>
             <select class="form-control" id="field_currency" name="currency" ng-model="vm.deposits.currency" ng-options="currency as currency.code for currency in vm.currencies track by currency.id">
                 <option value=""></option>

@@ -1,11 +1,12 @@
 {
     "home": {
-        "title": "Bienvenue, Java Hipster !",
+        "title": "Tableau",
         "subtitle": "Bienvenue sur CashFlow",
+        "subtitle2":"Vous pouvez modifier votre ",
         "logged": {
             "message": "Vous êtes connecté en tant que \"{{username}}\"."
         },
-        "question": "Si vous avez des questions à propos de JHipster:",
+        "question": "Ici, vous pouvez gérer vos données , modifier et supprimer vos comptes d'épargne , des dépôts , des fonds ou des actions",
         "link": {
             "homepage": "Page d'accueil de JHipster",
             "stackoverflow": "JHipster sur Stack Overflow",

@@ -16,12 +16,11 @@
                         <div>
                             <img src="/content/images/invest.png" class="img-carousel img-responsive img-rounded">
                             <span class="txt-carousel">
-                                <h3>Cash Flow</h3>
-                                <br>
-                                <h4>
-                                Make grow your savings. </br>
+                                <span class="carousel-titol">Welcome to CashFlow,</span>
 
-                                </br>Take the control of your:</br>
+                                </br><i>Make grow your savings.</i> </br>
+
+                                </br>Take the control of:</br>
                                     <ul>
                                             <li>Savings</li>
 
@@ -31,7 +30,7 @@
 
                                             <li>Stock</li>
                                     </ul>
-                                </h4>
+
                             </span>
                         </div>
                     </div>
@@ -39,9 +38,9 @@
                         <div>
                             <img src="/content/images/savings.jpg" class="img-carousel img-responsive img-rounded">
                             <span class="txt-carousel">
-                                <h3>Savings</h3>
-                                <br>
-                                <h4>
+                                <span>Savings</span>
+                                </br>
+
                                 Here you can: </br>
 
 
@@ -50,10 +49,10 @@
 
                                             <li>Modify the total ammounts</li>
 
-                                            <li>Acces to operations history</li>
+                                            <li>History of operations</li>
 
                                     </ul>
-                                </h4>
+
                             </span>
                         </div>
                     </div>
@@ -61,9 +60,9 @@
                         <div>
                             <img src="/content/images/deposits.jpg" class="img-carousel img-responsive img-rounded">
                             <span class="txt-carousel">
-                                <h3>Deposits</h3>
-                                <br>
-                                <h4>
+                                <span>Deposits</span>
+                                </br>
+
                                 Here you can: </br>
 
 
@@ -76,7 +75,7 @@
                                                 at the end of term.</li>
 
                                     </ul>
-                                </h4>
+
                             </span>
                             </span>
                         </div>
@@ -85,24 +84,15 @@
                         <div>
                             <img src="/content/images/funds.jpg" class="img-carousel img-responsive img-rounded">
                             <span class="txt-carousel">
-                                <h3>Funds</h3>
-                                <br>
-                                <h4>
+                                <span>Funds</span>
+                                </br>
                                 Here you can: </br>
-
-
                                     <ul>
                                             <li>Insert your Funds</li>
-
                                             <li>Modify the total Shares</li>
-
                                             <li>Modify the total Ammount</li>
-
-                                            <li>Access to operations history</li>
-
+                                            <li>History of operations</li>
                                     </ul>
-                                </h4>
-                            </span>
                             </span>
                         </div>
                     </div>
@@ -110,23 +100,15 @@
                         <div>
                             <img src="/content/images/stock.jpg" class="img-carousel img-responsive img-rounded">
                             <span class="txt-carousel">
-                                <h3">Stock</h3>
-                                <br>
-                                <h4>
-                                Here you can: </br>
-
-
+                                <span>Stocks</span>
+                                    </br>
+                                    Here you can: </br>
                                     <ul>
                                             <li>Insert your Stocks</li>
-
                                             <li>Modify the total Shares</li>
-
                                             <li>Modify the total Ammount</li>
-
-                                            <li>Access to operations history</li>
-
+                                            <li>History of operations</li>
                                     </ul>
-                                </h4>
                             </span>
                         </div>
                     </div>
@@ -140,10 +122,53 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-                <div ng-show="vm.isAuthenticated()">
-                    <span class="lead" translate="home.subtitle"></span><span>,{{vm.account.login}}</span>
+            </div>
+            <div class="container-fluid" ng-show="vm.isAuthenticated()">
+
+                <div class="jumbotron">
+                    <h1 translate="home.title">Dashboard</h1>
+                    <p translate="home.question"></p>
+                </div>
+
+                <div class="panel panel-body">
+                    <span class="lead" translate="home.subtitle"></span>
+                    <span class="lead">{{vm.account.login}}.</span>
+                    <span class="lead" translate="home.subtitle2"></span>
+                    <a  class="lead" ui-sref="settings" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-wrench"></span>&nbsp;
+                        <span translate="global.menu.account.settings">Settings.</span>
+                    </a>
+                </div>
+
+                <div id="dashboard" class="panel panel-body">
+
                     <div>
-                        Aquí va el Dashboard
+                        <button class="btn btn-info" ui-sref="savings" >
+                            <span class="glyphicon glyphicon-piggy-bank"></span>&nbsp;
+                            <span translate="global.menu.entities.savings">Savings</span>
+                        </button>
+                        <span class="">In this section you can insert your Savings Accounts, and manage them</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-info" ui-sref="deposits" >
+                            <span class="glyphicon glyphicon-hourglass"></span>&nbsp;
+                            <span translate="global.menu.entities.deposits">Deposits</span>
+                        </button>
+                        <span class="">In this section you can insert your Fix Term Deposits, and manage them</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-info lead" ui-sref="funds">
+                            <span class="glyphicon glyphicon-tree-deciduous"></span>&nbsp;
+                            <span translate="global.menu.entities.funds">Funds</span>
+                        </button>
+                        <span>In this section you can insert your Investment Funds Shares, and manage them</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-info" class="" ui-sref="stock" >
+                            <span class="glyphicon glyphicon-lock"></span>&nbsp;
+                            <span translate="global.menu.entities.stock">Stock</span>
+                        </button>
+                        <span>In this section you can insert your Stock Exchange Shares, and manage them</span>
                     </div>
                 </div>
             </div>
@@ -160,8 +185,9 @@
         accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and
         password="user").
     </div>
-    <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.register"
+    <div class="alert alert-info" ng-switch-when="false" translate="global.messages.info.register"
          translate-compile>
         You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
     </div>
 </div>
+
