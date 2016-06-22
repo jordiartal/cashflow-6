@@ -157,22 +157,6 @@
             }]
         })
         .state('savings.history', {
-            /*parent:'savings',
-            url : '/findAudit/{id}' ,
-            data : {
-                authorities : [ 'ROLE_USER' ]
-            },
-            views : {
-                "content@": {
-                    TemplateUrl: 'app/entities/savings-audit/history.html',
-                    controller: 'SavingsAuditHistoryController'
-                }
-            },
-            resolve : {
-                entity: ['$stateParams','SavingsAudit',function ($stateParams , SavingsAudit) {
-                    return SavingsAudit.history({id : $stateParams.id});
-                }]
-            }*/
             parent: 'entity',
             url : '/findAudit/{id}',
             data: {

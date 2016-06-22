@@ -34,6 +34,17 @@
                     data.opDate = DateUtils.convertLocalDateToServer(data.opDate);
                     return angular.toJson(data);
                 }
+            },
+            'history': {
+                method: 'GET',
+                isArray : true,
+                url: 'api/funds/findAudit/:id',
+                interceptor: {
+                    response: function(response) {
+                        response.resource.$httpHeaders = response.headers;
+                        return response.resource;
+                    }
+                }
             }
         });
     }

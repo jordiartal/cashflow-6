@@ -1,6 +1,7 @@
 package org.cashflow6.app.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import org.cashflow6.app.domain.Funds;
 import org.cashflow6.app.domain.FundsAudit;
 import org.cashflow6.app.repository.FundsAuditRepository;
 import org.cashflow6.app.web.rest.util.HeaderUtil;
@@ -29,10 +30,10 @@ import java.util.Optional;
 public class FundsAuditResource {
 
     private final Logger log = LoggerFactory.getLogger(FundsAuditResource.class);
-        
+
     @Inject
     private FundsAuditRepository fundsAuditRepository;
-    
+
     /**
      * POST  /funds-audits : Create a new fundsAudit.
      *
@@ -93,7 +94,7 @@ public class FundsAuditResource {
     public ResponseEntity<List<FundsAudit>> getAllFundsAudits(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of FundsAudits");
-        Page<FundsAudit> page = fundsAuditRepository.findAll(pageable); 
+        Page<FundsAudit> page = fundsAuditRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/funds-audits");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
@@ -116,6 +117,19 @@ public class FundsAuditResource {
                 result,
                 HttpStatus.OK))
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    @RequestMapping ( value = "/funds/findAudit/{id}" ,
+        method = RequestMethod. GET ,
+        produces = MediaType. APPLICATION_JSON_VALUE )
+    @Timed
+    public ResponseEntity<List<FundsAudit>> findSavingsAuditBySavings (@PathVariable Funds id, Pageable pageable)throws URISyntaxException{
+        Page<FundsAudit> page = fundsAuditRepository.findFundsAuditByFunds(id, pageable);
+
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page,"api/savingsAudit/findAudit");
+
+
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
     /**

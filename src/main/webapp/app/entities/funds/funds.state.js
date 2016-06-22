@@ -160,7 +160,51 @@
                     $state.go('^');
                 });
             }]
-        });
+        })
+            .state('funds.history', {
+                parent: 'entity',
+                url : '/findAudit/{id}',
+                data: {
+                    authorities: ['ROLE_USER'],
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/funds-audit/history.html',
+                        controller: 'FundsAuditHistoryController',
+                        controllerAs: 'vm'
+                    }
+                },
+                params: {
+                    page: {
+                        value: '1',
+                        squash: true
+                    },
+                    sort: {
+                        value: 'id,asc',
+                        squash: true
+                    },
+                    search: null
+                },
+                resolve: {
+                    pagingParams: ['$stateParams', 'PaginationUtil', function ($stateParams, PaginationUtil) {
+                        return {
+                            page: PaginationUtil.parsePage($stateParams.page),
+                            sort: $stateParams.sort,
+                            predicate: PaginationUtil.parsePredicate($stateParams.sort),
+                            ascending: PaginationUtil.parseAscending($stateParams.sort),
+                            search: $stateParams.search
+                        };
+                    }],
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('fundsAudit');
+                        $translatePartialLoader.addPart('global');
+                        return $translate.refresh();
+                    }],
+                    entity: ['$stateParams','FundsAudit',function ($stateParams , FundsAudit) {
+                        return FundsAudit.history({id : $stateParams.id});
+                    }]
+                }
+            })
+        ;
     }
-
 })();
