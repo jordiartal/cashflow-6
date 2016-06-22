@@ -1,5 +1,5 @@
 <div>
-    <h2 translate="cashflow6App.savingsAudit.home.title">Savings Audits</h2>
+    <h2>History of {{dades[0].savings.accountName}}</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
@@ -28,16 +28,6 @@
                 <td>{{savingsAudit.newValue}}</td>
                 <td has-authority="ROLE_ADMIN">
                     <a ui-sref="savings-detail({id:savingsAudit.savings.id})">{{savingsAudit.savings.id}}</a>
-                </td>
-                <td class="text-right">
-                    <div class="btn-group flex-btn-group-container">
-                        <button type="submit"
-                                ui-sref="savings-audit-detail({id:savingsAudit.id})"
-                                class="btn btn-info btn-sm">
-                            <span class="glyphicon glyphicon-eye-open"></span>
-                            <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
-                        </button>
-                    </div>
                 </td>
             </tr>
             </tbody>
