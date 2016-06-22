@@ -1,4 +1,24 @@
-# cashflow6
+#Anotacions sobre el Projecte, com instal·lar i on es troba ubicat
+
+##Heroku
+    https://cashflow-6.herokuapp.com
+
+##Que es requereix per a instal·lar l’aplicació i entrar al codi:
+    
+###Cal tenir instal·lat:
+        1. Java JDK.
+        2. Node.js
+        3. Grunt
+        4. Jhipster revisar l'enllaç següent 
+                https://jhipster.github.io/installation/
+        5. Intellij IDEA o un IDE + Tomcat
+        6. Descarregar el programa des del repositori Github
+
+###Que es requereix per a utilitzar l’aplicació
+    Navegador Web i connexió a internet.
+
+
+#Anotacions de JHIPTER:
 
 This application was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
 
