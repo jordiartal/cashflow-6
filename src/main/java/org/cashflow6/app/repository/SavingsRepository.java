@@ -19,7 +19,4 @@ public interface SavingsRepository extends JpaRepository<Savings,Long> {
     @Query("select savings from Savings savings where savings.user.login = ?#{principal.username}")
     Page<Savings> findByUserIsCurrentUser(Pageable pageable);
 
-    @Query("select sum(actual_value) as savingsTotal from savings savings where savings.user.login = ?#{principal.username}")
-    Double savingsTotalgit ;
-
 }
