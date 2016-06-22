@@ -157,16 +157,31 @@
             }]
         })
         .state('savings.history', {
-            parent:'savings',
+            /*parent:'savings',
             url : '/findAudit/{id}' ,
             data : {
-                authorities : [ 'ROLE_USER' ] ,
-                pageTitle : 'cashflow6App.savingsAudit.home.title'
+                authorities : [ 'ROLE_USER' ]
             },
             views : {
-                'content@' : {
-                    TemplateUrl : 'app/entities/savings-audit/savings-audits-history.html',
-                    controller : 'SavingsAuditHistoryController',
+                "content@": {
+                    TemplateUrl: 'app/entities/savings-audit/history.html',
+                    controller: 'SavingsAuditHistoryController'
+                }
+            },
+            resolve : {
+                entity: ['$stateParams','SavingsAudit',function ($stateParams , SavingsAudit) {
+                    return SavingsAudit.history({id : $stateParams.id});
+                }]
+            }*/
+            parent: 'entity',
+            url : '/findAudit/{id}',
+            data: {
+                authorities: ['ROLE_USER'],
+            },
+            views: {
+                'content@': {
+                    templateUrl: 'app/entities/savings-audit/history.html',
+                    controller: 'SavingsAuditHistoryController',
                     controllerAs: 'vm'
                 }
             },
@@ -181,7 +196,7 @@
                 },
                 search: null
             },
-            resolve : {
+            resolve: {
                 pagingParams: ['$stateParams', 'PaginationUtil', function ($stateParams, PaginationUtil) {
                     return {
                         page: PaginationUtil.parsePage($stateParams.page),
@@ -192,7 +207,6 @@
                     };
                 }],
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                    $translatePartialLoader.addPart('savings');
                     $translatePartialLoader.addPart('savingsAudit');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();

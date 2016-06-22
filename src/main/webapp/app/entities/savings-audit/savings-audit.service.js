@@ -44,14 +44,7 @@
                         response.resource.$httpHeaders = response.headers;
                         return response.resource;
                     }
-                },
-                /*transformResponse: function (data) {
-                    if (data) {
-                        data = angular.fromJson(data);
-                        data.opDate = DateUtils.convertLocalDateFromServer(data.opDate);
-                    }
-                    return data;
-                }*/
+                }
             }
         });
     }
