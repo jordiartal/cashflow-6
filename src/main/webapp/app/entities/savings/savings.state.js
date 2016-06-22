@@ -157,7 +157,7 @@
             }]
         })
         .state('savings.history', {
-            parent: 'entity',
+            parent: 'savings',
             url : '/findAudit/{id}',
             data: {
                 authorities: ['ROLE_USER'],

@@ -123,10 +123,10 @@ public class FundsAuditResource {
         method = RequestMethod. GET ,
         produces = MediaType. APPLICATION_JSON_VALUE )
     @Timed
-    public ResponseEntity<List<FundsAudit>> findSavingsAuditBySavings (@PathVariable Funds id, Pageable pageable)throws URISyntaxException{
+    public ResponseEntity<List<FundsAudit>> findFundsAuditByFunds (@PathVariable Funds id, Pageable pageable)throws URISyntaxException{
         Page<FundsAudit> page = fundsAuditRepository.findFundsAuditByFunds(id, pageable);
 
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page,"api/savingsAudit/findAudit");
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page,"api/fundsAudit/findAudit");
 
 
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);

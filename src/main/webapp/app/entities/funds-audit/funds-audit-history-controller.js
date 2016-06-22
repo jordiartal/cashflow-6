@@ -7,10 +7,10 @@
 
     FundsAuditHistoryController.$inject = ['$scope', '$state', 'FundsAudit', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants','entity'];
 
-
     function FundsAuditHistoryController ($scope, $state, FundsAudit, ParseLinks, AlertService, pagingParams, paginationConstants, entity) {
 
         $scope.dades = entity;
+
         var vm = this;
         vm.loadAll = loadAll;
         vm.loadPage = loadPage;
@@ -58,7 +58,4 @@
         }
 
     }
-
-
-
 })();
