@@ -1,8 +1,12 @@
 package org.cashflow6.app.repository;
 
+import org.cashflow6.app.domain.Stock;
 import org.cashflow6.app.domain.StockAudit;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.*;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -11,5 +15,5 @@ import java.util.List;
  */
 @SuppressWarnings("unused")
 public interface StockAuditRepository extends JpaRepository<StockAudit,Long> {
-
+    Page<StockAudit> findStockAuditByStock(@Param("id") Stock id, Pageable pageable);
 }

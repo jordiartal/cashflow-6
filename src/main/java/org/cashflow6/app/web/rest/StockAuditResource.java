@@ -3,6 +3,7 @@ package org.cashflow6.app.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import org.cashflow6.app.domain.Savings;
 import org.cashflow6.app.domain.SavingsAudit;
+import org.cashflow6.app.domain.Stock;
 import org.cashflow6.app.domain.StockAudit;
 import org.cashflow6.app.repository.SavingsAuditRepository;
 import org.cashflow6.app.repository.StockAuditRepository;
@@ -121,7 +122,18 @@ public class StockAuditResource {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @RequestMapping ( value = "/stock/findAudit/{id}" ,
+        method = RequestMethod. GET ,
+        produces = MediaType. APPLICATION_JSON_VALUE )
+    @Timed
+    public ResponseEntity<List<StockAudit>> findStockAuditByStock (@PathVariable Stock id, Pageable pageable)throws URISyntaxException{
+        Page<StockAudit> page = stockAuditRepository.findStockAuditByStock(id, pageable);
 
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page,"api/stockAudit/findAudit");
+
+
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
 
     /**
      * DELETE  /stock-audits/:id : delete the "id" stockAudit.
